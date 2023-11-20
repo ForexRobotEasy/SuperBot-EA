@@ -1,0 +1,100 @@
+
+// SuperBot EA - Forex Robot Easy
+// Developer's Site: forexroboteasy.com
+// Development by: Forex Robot Easy Team
+
+// Import necessary libraries and classes
+#include <Trade\Trade.mqh>
+#include <Trade\PositionInfo.mqh>
+
+// Define input parameters
+input double lotSize = 0.01; // Trade position size
+input double stopLoss = 20; // Stop loss level in pips
+input double takeProfit = 30; // Take profit level in pips
+input double trailingStop = 15; // Trailing stop level in pips
+
+// Define trade variables
+bool tradeOpened = false; // Flag to check if a trade position is open
+bool tradeClosed = false; // Flag to check if a trade position is closed
+bool trendFollowing = true; // Flag to enable trend following mode
+
+// Define trade functions
+void openTradePosition()
+{
+    // Check if a trade position is already open
+    if (tradeOpened)
+    {
+        Print('Trade position already open');
+        return;
+    }
+    
+    // Open a trade position based on predefined parameters and market conditions
+    if (trendFollowing)
+    {
+        // Code for opening a trade position in the direction of the trend
+        // ...
+    }
+    else
+    {
+        // Code for opening a trade position in the opposite direction of the trend
+        // ...
+    }
+    
+    tradeOpened = true; // Set the tradeOpened flag to true
+}
+
+void closeTradePosition()
+{
+    // Check if a trade position is already closed
+    if (tradeClosed)
+    {
+        Print('Trade position already closed');
+        return;
+    }
+    
+    // Close the trade position either based on predefined parameters or market conditions
+    // ...
+    
+    tradeClosed = true; // Set the tradeClosed flag to true
+}
+
+void setStopLossAndTakeProfit()
+{
+    // Set stop loss and take profit levels for each trade position
+    // ...
+}
+
+void setTrailingStop()
+{
+    // Implement trailing stop feature to protect profits and minimize losses
+    // ...
+}
+
+void manageRisk()
+{
+    // Incorporate risk management techniques, such as position sizing and leverage control
+    // ...
+}
+
+// Define the main function
+void OnTick()
+{
+    // Call the necessary trade functions based on market conditions and user preferences
+    if (SomeCondition)
+    {
+        openTradePosition();
+        setStopLossAndTakeProfit();
+        setTrailingStop();
+        manageRisk();
+    }
+    else if (SomeCondition)
+    {
+        closeTradePosition();
+    }
+    
+    // Additional code for other trading operations
+    // ...
+}
+
+// Additional code for initialization, deinitialization, and error handling
+// ...
